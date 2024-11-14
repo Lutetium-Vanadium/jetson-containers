@@ -15,17 +15,17 @@ cd /opt/fairseq2
 git checkout v${FAIRSEQ2_VERSION}
 
 # Finally, to install fairseq2’s C++ build dependencies (e.g. cmake, ninja), use:
-pip install -r native/python/requirements-build.txt
+pip3 install --no-cache-dir -r native/python/requirements-build.txt
 
 cd native
 cmake -GNinja -DFAIRSEQ2N_USE_CUDA=ON -B build
 cmake --build build
 
 cd python
-pip install .
+pip3 install --no-cache-dir .
 
 cd ../..
-pip install .
+pip3 install --no-cache-dir .
 
 cd ..
 rm -rf /opt/fairseq2
